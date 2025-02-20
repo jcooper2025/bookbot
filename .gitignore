@@ -173,3 +173,4 @@ cython_debug/
 # Book Bot PRoject specific
 
 books/
+scratch.py
