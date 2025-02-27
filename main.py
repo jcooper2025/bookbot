@@ -1,4 +1,4 @@
-
+import sys
 # def sort_on(dict):
 #     return dict[]
 
@@ -23,7 +23,7 @@ def main():
 
     list_of_char_inv = []
 
-    with open("books/frankenstein.txt") as f:
+    with open(sys.argv[1]) as f:
         file_contents = f.read()
 
     words = count_words(file_contents)
@@ -39,8 +39,12 @@ def main():
 
     for ele in list_of_char_inv:
         key, item = next(iter(ele.items()))
-        print(f"The '{key}' character is found {item} times")
+        print(f"{key}: {item}")
 
 
 if __name__ == "__main__":
+
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
     main()
